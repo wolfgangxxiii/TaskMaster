@@ -1,74 +1,89 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TaskMaster Kalendarz</title>
-<style>
-  /* Dodaj tutaj swoje style CSS */
-  .calendar {
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-  }
-  .calendar-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    align-items: center;
-  }
-  .calendar-day {
-    width: 14.28%;
-    border: 1px solid #ddd;
-    min-height: 100px;
-    display: inline-block;
-    vertical-align: top;
-  }
-  .today {
-    background: #e3f2fd;
-  }
-  .event {
-    background: #ffe0b2;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        @media (min-width: 768px) {
+            nav ul {
+                display: flex;
+                justify-content: center;
+            }
+            nav button {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<div class="calendar">
-
-  <!-- Nagłówek Kalendarza -->
-  <div class="calendar-header">
-    <button id="prev-month">« Poprzedni</button>
-    <h2>May 2024</h2>
-    <button id="next-month">Następny »</button>
-  </div>
-
-  <!-- Dni Tygodnia -->
-  <div class="calendar-row">
-    <div class="calendar-day">Pon</div>
-    <div class="calendar-day">Wt</div>
-    <div class="calendar-day">Śr</div>
-    <div class="calendar-day">Czw</div>
-    <div class="calendar-day">Pt</div>
-    <div class="calendar-day">Sob</div>
-    <div class="calendar-day">Ndz</div>
-  </div>
-
-  <!-- Dni Miesiąca -->
-  <div class="calendar-row">
-    <!-- Generuj dni za pomocą JavaScript -->
-    <!-- Przykład: -->
-    <div class="calendar-day">1</div>
-    <div class="calendar-day">2</div>
-    <div class="calendar-day event">3 <br> Tatuaż 10:00</div>
-    <!-- itd. -->
-  </div>
-  
-</div>
-
-<script>
-  // Dodaj tutaj swój kod JavaScript
-</script>
-
+    <header>
+        <h1>TaskMaster</h1>
+        <nav>
+            <button id="menu-toggle">Menu</button>
+            <ul id="menu">
+                <li><a href="#">Strona główna</a></li>
+                <li><a href="#">O aplikacji</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Witaj w TaskMaster!</h2>
+            <p>Zarządzaj swoim czasem efektywnie, gdziekolwiek jesteś.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 TaskMaster. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var menu = document.getElementById('menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
