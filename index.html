@@ -208,6 +208,18 @@ footer {
                 menu.classList.remove('show-menu');
             }
         });
+
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is the email you need.
+            // Optional: Sign the user out after they are logged into your app
+            // gapi.auth2.getAuthInstance().signOut().then(function() {
+            //   console.log('User signed out.');
+            // });
+        }
     </script>
 </body>
 </html>
