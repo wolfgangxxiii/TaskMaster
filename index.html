@@ -24,12 +24,21 @@
         nav ul {
             list-style: none;
             padding: 0;
-            display: none;
+            display: none; /* Menu domyślnie ukryte */
+            margin: 0;
+            background-color: #007BFF;
+            width: 100%;
+        }
+
+        nav ul li {
+            text-align: center;
+            padding: 10px 0;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
+            display: block;
         }
 
         nav button {
@@ -37,20 +46,11 @@
             border: none;
             color: white;
             font-size: 16px;
+            cursor: pointer;
         }
 
         main {
             padding: 20px;
-        }
-
-        @media (min-width: 768px) {
-            nav ul {
-                display: flex;
-                justify-content: center;
-            }
-            nav button {
-                display: none;
-            }
         }
     </style>
 </head>
