@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskMaster</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="872214377097-abla4p0200k6um59i0ehln8tsv43siqq.apps.googleusercontent.com">
     <style>
-        body {
+        html, body {
+            height: 100%;
             margin: 0;
+            display: flex;
+            flex-direction: column;
             font-family: Arial, sans-serif;
         }
 
@@ -15,10 +20,6 @@
             color: white;
             padding: 10px 20px;
             text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
         }
 
         nav ul {
@@ -50,7 +51,47 @@
         }
 
         main {
+            flex: 1;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            max-width: 300px;
+            width: 100%;
+        }
+
+        form input[type="email"], form input[type="password"], .g-signin2 {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto; /* kluczowe dla przypięcia stopki na dole */
+        }
+
+        .registration-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -71,6 +112,13 @@
             <h2>Witaj w TaskMaster!</h2>
             <p>Zarządzaj swoim czasem efektywnie, gdziekolwiek jesteś.</p>
         </section>
+        <form>
+            <input type="email" placeholder="Adres email">
+            <input type="password" placeholder="Hasło">
+            <button type="submit">Zaloguj się</button>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <a href="#" class="registration-link">Nie masz konta? Zarejestruj się</a>
+        </form>
     </main>
     <footer>
         <p>&copy; 2024 TaskMaster. Wszelkie prawa zastrzeżone.</p>
@@ -84,6 +132,19 @@
                 menu.style.display = 'block';
             }
         });
+
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is the email you need.
+
+            // Optional: Sign the user out after they are logged into your app
+            // gapi.auth2.getAuthInstance().signOut().then(function() {
+            //   console.log('User signed out.');
+            // });
+        }
     </script>
 </body>
 </html>
