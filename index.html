@@ -1,12 +1,74 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Przykładowa Strona</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskMaster Kalendarz</title>
+<style>
+  /* Dodaj tutaj swoje style CSS */
+  .calendar {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+  }
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+  }
+  .calendar-day {
+    width: 14.28%;
+    border: 1px solid #ddd;
+    min-height: 100px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .today {
+    background: #e3f2fd;
+  }
+  .event {
+    background: #ffe0b2;
+  }
+</style>
 </head>
 <body>
-    <h1>Witaj na mojej stronie!</h1>
-    <p>To jest przykładowa strona internetowa.</p>
+
+<div class="calendar">
+
+  <!-- Nagłówek Kalendarza -->
+  <div class="calendar-header">
+    <button id="prev-month">« Poprzedni</button>
+    <h2>May 2024</h2>
+    <button id="next-month">Następny »</button>
+  </div>
+
+  <!-- Dni Tygodnia -->
+  <div class="calendar-row">
+    <div class="calendar-day">Pon</div>
+    <div class="calendar-day">Wt</div>
+    <div class="calendar-day">Śr</div>
+    <div class="calendar-day">Czw</div>
+    <div class="calendar-day">Pt</div>
+    <div class="calendar-day">Sob</div>
+    <div class="calendar-day">Ndz</div>
+  </div>
+
+  <!-- Dni Miesiąca -->
+  <div class="calendar-row">
+    <!-- Generuj dni za pomocą JavaScript -->
+    <!-- Przykład: -->
+    <div class="calendar-day">1</div>
+    <div class="calendar-day">2</div>
+    <div class="calendar-day event">3 <br> Tatuaż 10:00</div>
+    <!-- itd. -->
+  </div>
+  
+</div>
+
+<script>
+  // Dodaj tutaj swój kod JavaScript
+</script>
+
 </body>
 </html>
