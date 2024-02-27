@@ -18,23 +18,39 @@
             color: #9e8d8f; /* Ciemny szary dla tekstu */
         }
 
+                /* Pozostałe style */
         header {
+            display: flex; /* Nowy */
+            align-items: center; /* Nowy */
+            justify-content: flex-start; /* Nowy */
             background-color: #1b2c00;
             font-size: 15px;
             color: white;
             padding: 10px 20px;
             text-align: center;
-            position: relative; /* Pozycjonowanie względem innych elementów */
-            z-index: 2; /* Upewnij się, że nagłówek jest zawsze na wierzchu */
         }
 
+        #menu-toggle { /* Zmodyfikowany */
+            background: #4d7701; /* Kolor tła przycisku */
+            width: 50px; /* Szerokość przycisku */
+            height: 50px; /* Wysokość przycisku */
+            margin-right: 20px; /* Odstęp od tytułu */
+            cursor: pointer;
+            border: none;
+            display: flex; /* Wyśrodkowanie ikony w przycisku */
+            align-items: center; /* Pionowo */
+            justify-content: center; /* Poziomo */
+        }
+        #menu-toggle:hover {
+            background: #f46500;
+        }
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             background-color: #4d7701;
             position: fixed;
-            top: 125px; /* Wysokość nagłówka + margines */
+            top: 94px; /* Wysokość nagłówka + margines */
             left: 0;
             width: 250px;
             height: 100%;
@@ -141,9 +157,9 @@
 </head>
 <body>
     <header>
+        <button id="menu-toggle">&#9776;</button> <!-- Zmieniono pozycję -->
         <h1>TaskMaster</h1>
         <nav>
-            <button id="menu-toggle">Menu</button>
             <ul id="menu">
                 <li><a href="#">Strona główna</a></li>
                 <li><a href="#">O aplikacji</a></li>
