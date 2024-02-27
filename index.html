@@ -161,6 +161,17 @@ footer {
     font-size: 12px;
     padding: 10px 0;
     color: var(--text-color);
+    z-index: 2;
+}
+
+nav {
+    z-index: 2; /* Upewnia, że menu jest nad innymi elementami */
+    /* pozostałe style */
+}
+
+.g-signin2 {
+    z-index: 1; /* Niższy z-index, ale nadal wyższy niż domyślne elementy, może być opcjonalny */
+    /* pozostałe style */
 }
 
     </style>
