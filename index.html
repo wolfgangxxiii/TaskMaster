@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskMaster</title>
+    <link rel="icon" href="logo.png">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="872214377097-abla4p0200k6um59i0ehln8tsv43siqq.apps.googleusercontent.com">
     <style>
@@ -165,13 +166,15 @@ footer {
 }
 
 nav {
-    z-index: 2; /* Upewnia, że menu jest nad innymi elementami */
-    /* pozostałe style */
+    z-index: 2;
 }
 
 .g-signin2 {
-    z-index: 1; /* Niższy z-index, ale nadal wyższy niż domyślne elementy, może być opcjonalny */
-    /* pozostałe style */
+    z-index: 1;
+}
+img {
+    width: 100%;
+    height: 100%;
 }
 
     </style>
@@ -192,6 +195,7 @@ nav {
         <section>
             <h2>Witaj w TaskMaster!</h2>
             <p>Zarządzaj swoim czasem efektywnie, gdziekolwiek jesteś.</p>
+            <img src="logo.png" alt="Logo">
         </section>
         <form>
             <h3>Zaloguj się...</h3>
