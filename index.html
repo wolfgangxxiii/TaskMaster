@@ -8,7 +8,8 @@
     <meta name="google-signin-client_id" content="872214377097-abla4p0200k6um59i0ehln8tsv43siqq.apps.googleusercontent.com">
     <style>
         html, body {
-            height: 0;
+            height: 100%;
+            width: 100%;
             margin: 0;
             display: flex;
             flex-direction: column;
@@ -154,24 +155,34 @@
         <p>&copy; 2024 TaskMaster. Wszelkie prawa zastrzeżone.</p>
     </footer>
     <script>
-        document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('menu-toggle').addEventListener('click', function(event) {
             var menu = document.getElementById('menu');
             menu.classList.toggle('show-menu');
+            event.stopPropagation(); // Zapobiega propagacji zdarzenia do dokumentu
         });
-
-
+    
+        // Dodajemy obsługę kliknięcia na dokument, aby schować menu, gdy kliknięto poza nim
+        document.addEventListener('click', function(event) {
+            var menu = document.getElementById('menu');
+            var toggleButton = document.getElementById('menu-toggle');
+            // Sprawdź, czy kliknięcie było poza menu i przyciskiem menu
+            if (!menu.contains(event.target) && !toggleButton.contains(event.target)) {
+                menu.classList.remove('show-menu');
+            }
+        });
+    
         function onSignIn(googleUser) {
             var profile = googleUser.getBasicProfile();
             console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
             console.log('Name: ' + profile.getName());
             console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail()); // This is the email you need.
-
             // Optional: Sign the user out after they are logged into your app
             // gapi.auth2.getAuthInstance().signOut().then(function() {
             //   console.log('User signed out.');
             // });
         }
     </script>
+    
 </body>
 </html>
