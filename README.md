@@ -22,7 +22,7 @@
 
 1. **Klonuj repozytorium:**
    ```bash
-   git clone https://github.com/twoj-login/taskmaster.git
+   git clone https://github.com/wolfgangxxiii/TaskMaster.git
    ```
 2. **Otwórz plik `index.html` w przeglądarce**  
    (wszystkie pliki są statyczne, backend do logowania/rezerwacji jest planowany w kolejnych wersjach).
